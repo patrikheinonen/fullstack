@@ -59,14 +59,10 @@ const Country = ({ country }) => {
   return (
     <div>
       <h1>{country.name.common}</h1>
-      {country.capital.map((capital) => (
-        <p key={country.name.official}>{capital}</p>
-      ))}
+      <p>{country.capital[0]}</p>
       <p>{country.area}</p>
       <h3> languages </h3>
       {Object.entries(country.languages).map(([key, value]) => (
-        //This fails with south africa but im not sure whast I should use as key
-        //as json is missing ids.
         <p key={key}>{value}</p>
       ))}
       <img src={country.flags.png} alt={country.flags.alt}></img>
